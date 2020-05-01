@@ -1,5 +1,3 @@
-const sgMail = require('@sendgrid/mail')
-sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 const Cart = require('../../models/cart')
 const Store = require('../../models/store')
 const {
@@ -74,12 +72,6 @@ async function addCart (req, res) {
       text: 'This link will lead you to your saved cart',
       html: emailBody
     }
-    await sgMail.send(msg)
-    res.status(200).json({
-      status:
-        'A link to your saved cart has been sent to ' + result.email + '.',
-      result
-    })
   } catch (err) {
     return res.status(500).json(err.message)
   }
