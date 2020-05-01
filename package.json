@@ -30,6 +30,9 @@
     "twilio": "^3.43.0",
     "validator": "^13.0.0"
   },
+  "engines": {
+    "node": "12.16.2"
+  },
   "devDependencies": {
     "eslint": "^6.8.0",
     "nodemon": "^2.0.3"

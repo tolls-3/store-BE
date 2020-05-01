@@ -2,9 +2,9 @@ require('dotenv').config()
 const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
-// const path = require('path')
 const mongoose = require('mongoose')
 const mongoURI = require('./config/config')
+
 //const passport = require('passport')
 
 //const stripeAuth = require('./authentication/stripeAuthentication')
@@ -41,18 +41,6 @@ server.use('/api/auth', authRouter)
 
 //passport.use(stripeAuth)
 
-// server.use(express.static(path.join(__dirname, 'public')))
-// server.set('views', path.join(__dirname, 'views'))
-// server.set('view engine', 'pug')
-
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://tolls3:<password>@cluster0-2bysy.mongodb.net/test?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true });
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
 
 mongoose
   .connect(mongoURI, {

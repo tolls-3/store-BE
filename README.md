@@ -1,7 +1,3 @@
-
-
-# Pure Retail: A platform for market traders, craftspeople, and hobbyists.
-
 ## Project Overview
 
 
