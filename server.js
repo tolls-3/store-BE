@@ -27,7 +27,7 @@ server.use(cors())
 
 server.use('/api/auth', authRouter)
 //server.use('/api/store', productRouter)
-//server.use('/api/store', storeRouter)
+server.use('/api/store', storeRouter)
 //server.use('/api/store', cartRouter)
 //server.use('/api/payment', paymentRouter)
 //server.use('/api/auth/stripe', stripeAuthRouter)
