@@ -1,2 +1,2 @@
-const baseUrl = 'https://app.pure-retail.com'
+const baseUrl = 'https://gracious-bell-739599.netlify.app'
 module.exports = baseUrl

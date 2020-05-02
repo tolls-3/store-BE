@@ -4,7 +4,7 @@ const Seller = require('../../models/seller')
 const { validateCartInput } = require('../../middleware/validateCartData')
 const baseUrl = require('../../helpers/baseUrl')
 
-async function submitCart (req, res) {
+async function submitCart(req, res) {
   const { errors, isValid } = validateCartInput(req.body)
   if (!isValid) {
     return res.status(400).json(errors)
@@ -26,7 +26,7 @@ async function submitCart (req, res) {
     const link = `${baseUrl}/cart/${cartId}`
 
     const message = `Hello ${store.ownerName},
-    I am making a purchase from your store: ${store.storeName} on the pure retail app.
+    I am making a purchase from your store: ${store.storeName} on the app.
     This is the link to my cart: ${link}`
 
     const text = message.split(' ').join('%20')

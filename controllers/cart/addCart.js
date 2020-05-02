@@ -31,22 +31,20 @@ async function addCart (req, res) {
     // link to FE route of buyers saved cart
     const link = `${baseUrl}/cart/${cartId}`
     // Configure mailgen by setting a theme and your product info
-    const logoUrl =
-      'https://res.cloudinary.com/pureretail/image/upload/v1579174900/photos/PureRetail_Logo_onniwf.png'
+    
     const mailGenerator = new Mailgen({
       theme: 'salted',
       product: {
         // Appears in header & footer of e-mails
         width: '100px',
-        name: 'Pure Retail',
+        name: 'Dev Shop',
         link: link,
-        // Optional product logo
-        logo: logoUrl,
         textDirection: 'rtl',
-        copyright: 'Copyright © 2020 Pure Retail. All rights reserved.'
+        copyright: 'Copyright © 2020 Dev Shop. All rights reserved.'
       }
     })
     // Prepare email contents
+    console.log('hey')
     const email = {
       body: {
         name: `${result.email}`,
@@ -63,12 +61,13 @@ async function addCart (req, res) {
       }
     }
 
+
     // Generate an HTML email using mailgen
     const emailBody = mailGenerator.generate(email)
     const msg = {
       to: `${result.email}`,
       from: process.env.FROM_EMAIL,
-      subject: 'Pure Retail email Notification for your Saved Cart',
+      subject: 'Dev Shop email Notification for your Saved Cart',
       text: 'This link will lead you to your saved cart',
       html: emailBody
     }
