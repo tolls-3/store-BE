@@ -26,7 +26,7 @@ server.use(cors())
 // server.use(passport.session())
 
 server.use('/api/auth', authRouter)
-//server.use('/api/store', productRouter)
+server.use('/api/store', productRouter)
 server.use('/api/store', storeRouter)
 //server.use('/api/store', cartRouter)
 //server.use('/api/payment', paymentRouter)
