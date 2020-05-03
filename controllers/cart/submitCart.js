@@ -33,7 +33,8 @@ async function submitCart(req, res) {
     return res.status(200).json({
       status: 'Cart has been successfully submitted',
       text,
-      sellerPhone: seller.phone
+      sellerPhone: seller.phone.status,
+      cartId
     })
   } catch (err) {
     return res.status(500).json(err.message)
