@@ -49,10 +49,6 @@ const cartSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-  finalLock: {
-    type: Boolean,
-    default: false
-  },
   paymentPreference: {
     type: String
   },

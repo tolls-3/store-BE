@@ -12,8 +12,6 @@ async function approveCart (req, res) {
     if (!cart) {
       return res.status(404).json({ message: 'This cart does not exist' })
     } else {
-      // eslint-disable-next-line require-atomic-updates
-      req.body.finalLock = true
       const updateCart = await Cart.findOneAndUpdate(
         { _id: cartId },
         { $set: req.body },
